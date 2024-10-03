@@ -10,7 +10,7 @@ nav_order: 1
 
 The following diagram gives a high-level overview of Firebolt’s structural architecture. Firebolt's components, which include management, compute, and storage layers, interact with a variety of workloads to enhance performance, scalability, and resource efficiency.
 
-![Firebolt Architecture](../assets/images/fireboltarchitecture.png)
+<img src="../../assets/images/fireboltarchitecture.png" alt="Firebolt's architecture has management, compute, and storage layers that work with various workloads." width="900"/>
 
 ## Management layer
 
@@ -26,7 +26,9 @@ Firebolt's management layer consists of the following:
 
 ## Compute layer
 
-Firebolt's **compute layer** is responsible for running queries and processing data through its scalable engines. Engines use parallel processing to deliver high performance and efficiency. You can create and configure multiple engines tailored to different workflows, such as data integration or analytical queries supporting customer facing analytics. Engines can be configured for different needs like query latency, throughput, and concurrency, adapting to specific data processing tasks. Firebolt’s compute layer features the following:
+Firebolt's **compute layer** is responsible for running queries and processing data through its scalable engines. Engines use parallel processing to deliver high performance and efficiency. You can create and configure multiple engines tailored to different workflows, such as data integration or analytical queries supporting customer facing analytics. Engines can be configured for different needs like query latency, throughput, and concurrency, adapting to specific data processing tasks. 
+
+Firebolt’s compute layer features the following:
 
 * **Scalable engines** - Firebolt's compute layer provides scalable engines that process queries in parallel, ensuring high-speed performance and efficiency for diverse workloads.
 * **Customizable configurations** - You can tailor engine configurations to match your specific workflow needs.
@@ -35,7 +37,9 @@ Firebolt's **compute layer** is responsible for running queries and processing d
 
 ## Storage layer
 
-Firebolt's **storage layer** efficiently manages large amounts of data by keeping storage separate from the compute process, which means that you can store as much data as needed without impacting compute resources. It uses cloud-based storage for high availability and durability, while also reducing costs. Data is stored in a compressed, column-based format to save space and improve query performance. Firebolt’s indexing features further speed up data retrieval by reducing the need to scan large datasets. This separation between storage and compute allows users to scale their storage needs independently, making resource management more flexible and cost-efficient. Firebolt’s storage layer features the following:
+Firebolt's **storage layer** efficiently manages large amounts of data by keeping storage separate from the compute process, which means that you can store as much data as needed without impacting compute resources. It uses cloud-based storage for high availability and durability, while also reducing costs. Data is stored in a compressed, column-based format to save space and improve query performance. Firebolt’s indexing features further speed up data retrieval by reducing the need to scan large datasets. This separation between storage and compute allows users to scale their storage needs independently, making resource management more flexible and cost-efficient. 
+
+Firebolt’s storage layer features the following:
 
 * **Separation of storage and compute** - You can scale data storage independently of the computing resources used for processing queries. This separation lets you adjust storage without affecting compute resources, allowing for flexible and efficient resource management.
 * **Cloud-based and cost-effective** - Firebolt leverages cloud storage for high availability, durability, and reduced costs.
