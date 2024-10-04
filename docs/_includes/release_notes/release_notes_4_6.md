@@ -19,6 +19,10 @@ With the release of version 4.6, `COPY FROM` now processes Parquet files similar
 
 ### New Features
 
+**`COPY TO` support for the `SNAPPY` compression type**<BR>
+
+[COPY TO]({% link sql_reference/commands/data-management/copy-to.md %}) now supports `SNAPPY` as a new compression option for Parquet files. This enhancement offers greater flexibility for managing file size and performance, particularly for workloads requiring faster compression. Each file is written in Parquet format, with the specified compression applied to the data pages in the column chunks.
+
 <!-- Auto Generated Markdown for FIR-31001 - Owned by Asya Shneerson -->
 **`COPY FROM` support for filtering by source file metadata**<BR>
 
