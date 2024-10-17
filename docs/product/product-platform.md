@@ -4,7 +4,7 @@ title: Platform capabilities
 description: Firebolt platform capabilities
 parent: What is Firebolt?
 nav_order: 2
-has_toc: false
+has_toc: true
 has_children: false
 ---
 
