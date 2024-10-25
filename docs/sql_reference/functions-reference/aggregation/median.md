@@ -10,7 +10,7 @@ published: true
 
 # MEDIAN
 
-Calculates the median for a given column. If number of values are even, `MEDIAN` returns the average of the two middle values.
+Returns the middle value in a given column. If number of values are even, `MEDIAN` returns the average of the two middle values.
 
 
 ## Syntax
