@@ -77,6 +77,8 @@ Firebolt optimizes workloads by considering configuration, resource utilization,
 
 # Next steps
 
+Read about Firebolt's [platform capabilities](../product/product-platform.md).
+
 Learn how to load and query your data with our [Get Started](../Guides/getting-started/index.md) and [Load data](../Guides/loading-data/loading-data.md) guides or use one of Firebolt’s [test data sets](https://www.firebolt.io/free-sample-datasets). 
 
 <a
@@ -102,4 +104,4 @@ Need help? Firebolt’s support team at [support@firebolt.io](mailto:support@fir
 * Addressing data loading issues.
 * Getting best practices for data modeling.
 
-
+{: .no_toc}
