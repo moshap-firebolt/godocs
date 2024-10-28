@@ -9,7 +9,7 @@ has_children: true
 
 # What is Firebolt?
 
-Firebolt is a next-generation cloud-native data warehouse designed for organizations that require high-speed analytics at scale. Its architecture supports complex data applications, high-concurrency workloads, and low-latency queries with ease. Firebolt leverages advanced indexing, efficient storage, and query optimization techniques to deliver high performance while maintaining cost efficiency. Whether dealing with complex data applications, high-concurrency workloads, or low-latency queries, Firebolt helps you unlock the full potential of your data without compromising on performance or cost.
+Firebolt is a next-generation cloud data warehouse designed for organizations that require lightning-fast analytics at scale. Whether you’re dealing with complex data applications, high-concurrency workloads, or low-latency queries, Firebolt empowers you to unlock the full potential of your data without compromising on performance or cost.
 
 # Why Firebolt?
 
@@ -19,8 +19,8 @@ Firebolt addresses the following challenges:
 
 * High latency and costly performance during data processing and retrieval.
 * Poor query performance under heavy loads.
-* Difficulty in scaling to manage large datasets efficiently.
-* Complexity in managing and optimizing data workflows, with limited compatibility with existing tools and languages.
+* Scaling difficulties when managing large datasets.
+* Complexity in managing and optimizing data workflows while working with unfamiliar languages.
 
 The following sections highlight Firebolt's key benefits, as well as its compatibility with various frameworks and workloads for seamless data integration and processing:
 
@@ -29,7 +29,7 @@ The following sections highlight Firebolt's key benefits, as well as its compati
 
 # Key benefits
 
-Firebolt provides **simplicity** and **scalability**, helping you to adapt rapidly to changes in your data and workloads. Key benefits include:
+Firebolt is inherently **scalable** helping you to adapt rapidly to changes in your data and workloads. Key benefits include:
 
 * [High Efficiency](#high-efficiency) — Achieve exceptional price-to-performance ratios, delivering fast analytics without high costs.
 * [Concurrency at Scale](#concurrency-at-scale) — Run thousands of queries concurrently, maintaining sub-second performance even under heavy loads.
@@ -46,13 +46,13 @@ Firebolt enables thousands of concurrent queries, ensuring your applications can
 
 ### <img src="../../assets/images/icon-elasticity.png" alt="Icon for elasticity or vertical, horizontal or concurrent scaling." width="40"/> Elasticity
 
-Firebolt's fully decoupled architecture and multi-dimensional elasticity allow compute, storage, and management resources to scale independently, optimizing both performance and cost efficiency. This architecture enables fine-grained control over resources as your workloads evolve, including scaling out to accommodate massive datasets. You can access any database from any engine, giving you flexibility as your requirements change. Firebolt’s architecture supports:
+Firebolt's fully decoupled architecture and multi-dimensional elasticity allow compute, storage, and management resources to scale independently, optimizing both performance and cost efficiency. This architecture enables fine-grained control over resources as your workloads evolve, including scaling out to accommodate massive datasets. You can access any database from any engine, giving you flexibility to access any data while offering workload isolation to achieve predictable performance. Furthermore, Firebolt's system allows fine-grained control over provisioned resources for achieving needed price-performance characteristics and to minimizing cost. Firebolt’s architecture supports:
 
-* **Vertical scaling** - Scale up to increase an engine's capacity so that you can handle more complex queries or larger workloads.
+* **Vertical scaling** - Scale up to increase the capacity of your engine to process complex queries for data-intensive workloads.
 * **Horizontal scaling** - Scale out by adding more compute nodes to handle higher data processing demands efficiently.
-* **Concurrent scaling** - Run multiple clusters within a single engine, supporting up to ten clusters simultaneously. User applications automatically benefit from concurrent scaling without requiring endpoint changes, as Firebolt transparently manages the scaling process.
+* **Concurrent scaling** - Run multiple clusters within a single engine, which can scale up to ten clusters simultaneously. Firebolt manages concurrency scaling transparently to user applications without requiring any endpoint changes.
 
-The following diagram shows you how to scale vertically, horizontally or concurrently using SQL in the **Firebolt Workspace**:
+The following diagram includes code examples of how to scale vertically, horizontally or scale for concurrency using SQL in the **Firebolt Workspace**:
 
 <img src="../../assets/images/product-scaling-engines.png" alt="You can scale vertically, horizontally, or concurrently in the Firebolt Workspace." width="700"/>
 
@@ -63,7 +63,7 @@ Firebolt's multi-dimensional approach to elasticity allows it to dynamically ada
 
 Firebolt supports a PostgreSQL-compliant SQL dialect, allowing your teams to leverage Firebolt's capabilities without needing to learn a new query language. This simplifies integration with existing workflows that contain tasks including data provisioning, processing, and management. With support for both structured and [semi-structured data](../Guides/working-with-semi-structured-data/working-with-semi-structured-data.md), Firebolt allows you to analyze diverse datasets within a single platform.
 
-# Frameworks and workloads
+# Eco-system and integrations
 
 Firebolt’s platform is optimized for integration within modern data workflows. It supports ingesting data efficiently through ELT tools, making it easy to move data from data lakes, relational databases, and other source systems into Firebolt. With support for Amazon S3 cloud storage and popular file formats like Avro, Parquet and ORC, Firebolt allows you to centralize and query your data with ultra-fast analytics, seamlessly fitting into your existing data architecture.
 
@@ -73,7 +73,7 @@ You can leverage industry-standard tools like Apache Airflow, dbt, and Superset 
 
 ### <img src="../../assets/images/icon-isolation.png" alt="Icon for workload isolation." width="40"/> Workload isolation for smooth operations
 
-Firebolt optimizes workloads by considering configuration, resource utilization, and history-based statistics to balance both latency and throughput. Any Firebolt engine can handle both read and write operations on any database, ensuring strong consistency across all engines.  Workloads are managed independently with dedicated compute resources, allowing you to run complex ELT processes, fast queries, BI reports, among others, without interference. This resource isolation ensures that intensive tasks don't disrupt critical applications or dashboards, ensuring smooth operations across diverse use cases.
+Firebolt optimizes workloads by considering configuration, resource utilization, and history-based statistics to balance both latency and throughput. Any Firebolt engine can handle both read and write operations on any database, ensuring strong consistency across all engines.  Workloads are managed independently with dedicated compute resources, allowing you to run complex ELT processes, fast queries, BI reports, among others, without interference. Workload isolation ensures that resource-heavy tasks do not impact your most critical applications and dashboards, enabling smooth operations across diverse use cases.
 
 # Next steps
 
