@@ -3,7 +3,7 @@ layout: default
 title: What is Firebolt?
 description: Product overview
 nav_order: 2
-has_toc: true
+has_toc: false
 has_children: true
 ---
 
@@ -38,15 +38,15 @@ Firebolt is inherently **scalable** helping you to adapt rapidly to changes in y
 
 ### <img src="../../assets/images/icon-efficiency.png" alt="Icon for efficiency." width="40"/> High efficiency
 
-Firebolt delivers low-latency, high performance analytics with one of the best price-to-performance ratios in the industry. Its architecture is optimized for fast query execution through features like vectorized processing and sparse indexing, which minimize data scans and optimize CPU usage. These features enable fast responses to data-intensive queries, even at petabyte scale, without overloading compute resources. Whether analyzing structured or semi-structured data, Firebolt delivers millisecond-level query responses, backed by ACID compliance to ensure data consistency, integrity and reliability.
+Firebolt delivers low-latency, high performance analytics with one of the best price-to-performance ratios in the industry. Its architecture is optimized for fast query execution through features like vectorized processing and sparse indexing, which minimize data scans and optimize CPU usage. These features enable fast responses to data-intensive queries, even at petabyte scale, without overloading compute resources. Whether analyzing structured or semi-structured data, Firebolt delivers millisecond-level query responses, backed by ACID compliance to ensure data consistency, integrity, and reliability.
 
 ### <img src="../../assets/images/icon-concurrency.png" alt="Icon for concurrency at scale." width="40"/> Concurrency at scale
 
-Firebolt enables thousands of concurrent queries, ensuring your applications can manage heavy query loads with consistent, reliable performance. Its fine-grained scaling capabilities allow it to achieve high query throughput efficiently, even during peak workloads, ensuring optimal resource allocation and minimizing query latency.
+Firebolt enables thousands of concurrent queries, ensuring your applications can manage heavy query loads with consistent, reliable performance. Its fine-grained scaling capabilities allow for high query throughput efficiently, even during peak workloads, ensuring optimal resource allocation and minimizing query latency.
 
 ### <img src="../../assets/images/icon-elasticity.png" alt="Icon for elasticity or vertical, horizontal or concurrent scaling." width="40"/> Elasticity
 
-Firebolt's fully decoupled architecture and multi-dimensional elasticity allow compute, storage, and management resources to scale independently, optimizing both performance and cost efficiency. This architecture enables fine-grained control over resources as your workloads evolve, including scaling out to accommodate massive datasets. You can access any database from any engine, giving you flexibility to access any data while offering workload isolation to achieve predictable performance. Furthermore, Firebolt's system allows fine-grained control over provisioned resources for achieving needed price-performance characteristics and to minimizing cost. Firebolt’s architecture supports:
+Firebolt's fully decoupled architecture and multi-dimensional elasticity allow compute, storage, and management resources to scale independently, optimizing both performance and cost efficiency. This architecture enables fine-grained control over resources as your workloads evolve, including scaling out to accommodate massive datasets. You can access any database from any engine, giving you flexibility to access any data while offering workload isolation to achieve predictable performance. Furthermore, Firebolt's system allows fine-grained control over provisioned resources for achieving needed price-performance characteristics and minimizing cost. Firebolt’s architecture supports:
 
 * **Vertical scaling** - Scale up to increase the capacity of your engine to process complex queries for data-intensive workloads.
 * **Horizontal scaling** - Scale out by adding more compute nodes to handle higher data processing demands efficiently.
@@ -61,11 +61,11 @@ Firebolt's multi-dimensional approach to elasticity allows it to dynamically ada
 
 ### <img src="../../assets/images/icon-simplicity.png" alt="Icon for SQL simplicity." width="40"/> SQL simplicity
 
-Firebolt supports a PostgreSQL-compliant SQL dialect, allowing your teams to leverage Firebolt's capabilities without needing to learn a new query language. This simplifies integration with existing workflows that contain tasks including data provisioning, processing, and management. With support for both structured and [semi-structured data](../Guides/working-with-semi-structured-data/working-with-semi-structured-data.md), Firebolt allows you to analyze diverse datasets within a single platform.
+Firebolt supports a PostgreSQL-compliant SQL dialect, allowing your teams to leverage Firebolt's capabilities without needing to learn a new query language. This simplifies integration with existing workflows that contain tasks that include data provisioning, processing, and management. With support for both structured and [semi-structured data](../Guides/working-with-semi-structured-data/working-with-semi-structured-data.md), Firebolt allows you to analyze diverse datasets within a single platform.
 
 # Eco-system and integrations
 
-Firebolt’s platform is optimized for integration within modern data workflows. It supports ingesting data efficiently through ELT tools, making it easy to move data from data lakes, relational databases, and other source systems into Firebolt. With support for Amazon S3 cloud storage and popular file formats like Avro, Parquet and ORC, Firebolt allows you to centralize and query your data with ultra-fast analytics, seamlessly fitting into your existing data architecture.
+Firebolt’s platform is optimized for integration within modern data workflows. It supports ingesting data efficiently through ELT tools, making it easy to move data from data lakes, relational databases, and other source systems into Firebolt. With support for Amazon S3 cloud storage and popular file formats like Avro, Parquet, and ORC, Firebolt allows you to centralize and query your data with ultra-fast analytics, seamlessly fitting into your existing data architecture.
 
 You can leverage industry-standard tools like Apache Airflow, dbt, and Superset for orchestration and visualization. Firebolt’s SDKs offer wide support for language clients like Python, Node.js, Java, and .NET. This flexibility empowers your team to build and query data using their preferred environments, ensuring smooth data workflows from ingestion to advanced analytics.
 
@@ -79,6 +79,8 @@ Firebolt optimizes workloads by considering configuration, resource utilization,
 
 Read about Firebolt's [platform capabilities](../product/product-platform.md).
 
+# More Firebolt resources
+
 Learn how to load and query your data with our [Get Started](../Guides/getting-started/index.md) and [Load data](../Guides/loading-data/loading-data.md) guides or use one of Firebolt’s [test data sets](https://www.firebolt.io/free-sample-datasets). 
 
 <a
@@ -87,21 +89,15 @@ Learn how to load and query your data with our [Get Started](../Guides/getting-s
     data-cta-action="signup"
     href="https://go.firebolt.io/signup"
     class="cta-arrow pricing w-inline-block">
-Sign-up</a> to access your $200 Firebolt credit. No credit card needed
+Sign up</a> to access your $200 Firebolt credit. No credit card needed
 
-
-
-# More Firebolt resources
-
-* See news, blog posts, whitepapers, events and videos at [Firebolt's Knowledge center](https://www.firebolt.io/knowledge-center). 
+* See news, blog posts, whitepapers, events, and videos at [Firebolt's Knowledge center](https://www.firebolt.io/knowledge-center). 
 * Explore our [competitive pricing options](https://www.firebolt.io/pricing).
 
 Need help? Firebolt’s support team at [support@firebolt.io](mailto:support@firebolt.io) is here to assist you with:
 
-* Getting help with onboarding.
+* Onboarding support.
 * Troubleshooting query performance.
 * Optimizing database configurations.
 * Addressing data loading issues.
 * Getting best practices for data modeling.
-
-{: .no_toc}
