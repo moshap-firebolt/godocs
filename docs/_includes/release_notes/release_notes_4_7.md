@@ -28,7 +28,7 @@ The query previously returned `{NULL}, {1}, NULL`, but now returns `NULL, {1}, {
 **Allowed use of the SESSION_USER function without parentheses**
 {: style="color:red;"}
 
-The `SESSION_USER` function can now be used without parentheses, like this: `SELECT SESSION_USER`. As a result, any column named `session_user` now needs to be enclosed in double quotes as follows: `SELECT 1 as "session_user"` or `SELECT "session_user" FROM table`.
+The `SESSION_USER` function can now be used without parentheses, like this: `SELECT SESSION_USER`. As a result, any column named `session_user` now needs to be enclosed in double quotes as follows: `SELECT 1 AS "session_user"` or `SELECT "session_user" FROM table`.
 
 
 ### New Features
@@ -40,7 +40,7 @@ You can now apply Snappy compression, which is faster than GZIP, when using `COP
 
 <!-- Auto Generated Markdown for FIR-36415 - Owned by Pascal Schulze -->
 **Added `information_schema.engine_user_query_history` view to log only user-initiated queries**<br/>
-Added a new query history view, `information_schema.engine_user_query_history` that shows all queries initiated by users. This view filters information from `information_schema.engine_query_history` view, which logs all engine queries including system-generated ones like UI updates and page-load requests.
+Added a new query history view, `information_schema.engine_user_query_history`, which shows all queries initiated by users. This view filters information from `information_schema.engine_query_history` view, which logs all engine queries including system-generated ones like UI updates and page-load requests.
 
 
 <!-- Markdown for FIR-35689 - Owned by Mariia Kaplun -->
@@ -58,6 +58,8 @@ Caching remains enabled by default. This setting allows users to temporarily dis
 **Added "FROM first" syntax allowing the `FROM` clause to precede the `SELECT` clause**<br/>
 Added support for the "FROM first" syntax, which allows placing the `FROM` clause before the `SELECT` clause, for example `FROM t SELECT a, SUM(b) GROUP BY a`. You can now also omit the `SELECT` clause, as in `FROM t`.
 
+**Introduced a new function `GEN_RANDOM_UUID_TEXT` to generate a universally unique identifier (UUID)**<br/>
+The new function `GEN_RANDOM_UUID_TEXT` accepts no arguments and returns a version `4` UUID as defined by [RFC-4122](https://tools.ietf.org/html/rfc4122#section-4.4) as a `TEXT` value.
 
 <!-- Auto Generated Markdown for FIR-36609 - Owned by Mosha Pasumansky -->
 **Introduced `~` and `!~` operators as aliases for `REGEXP_LIKE` and `NOT REGEXP_LIKE`**<br/>
@@ -77,7 +79,7 @@ The following new JSON functions are now supported:
 The following trigonometric functions are now supported:
 - `RADIANS` to convert degrees into radians
 - `SIN` to compute the sine in radians
-- `ATAN2` to calculate the arctangent with two arguments. `atan2(y,x)` is the angle between the positive x-axis and the line from the origin to the point `(x,y)`, expressed in radians.
+- `ATAN2` to calculate the arctangent with two arguments. `ATAN2(y,x)` is the angle between the positive x-axis and the line from the origin to the point `(x,y)`, expressed in radians.
 
 
 <!-- Auto Generated Markdown for FIR-35708 - Owned by Christoph Anneser -->
@@ -91,7 +93,7 @@ New functions that accept `REAL` and `DOUBLE` inputs and return standard deviati
 
 <!-- Auto Generated Markdown for FIR-36430, FIR-35462 - Owned by Christoph Anneser -->
 **Introduced new array functions `ARRAY_ALL_MATCH` and `ARRAY_ANY_MATCH`**<br/>
-The new functions `array_all_match` and `array_any_match` accept an (optional) lambda function and an array and return `TRUE` if all elements (`array_all_match`) or any element (`array_any_match`) satisfy the lambda condition, and `FALSE` otherwise.  When no lambda is passed, the array has to be of type `BOOLEAN`, and the identity lambda `x -> x` is used.
+The new functions `ARRAY_ALL_MATCH` and `ARRAY_ANY_MATCH` accept an (optional) lambda function and an array and return `TRUE` if all elements (`ARRAY_ALL_MATCH`) or any element (`ARRAY_ANY_MATCH`) satisfy the lambda condition, and `FALSE` otherwise.  When no lambda is passed, the array has to be of type `BOOLEAN`, and the identity lambda `x -> x` is used.
 
 ### Performance Improvements
 
