@@ -41,5 +41,8 @@ See a [full function glossary](./functions-glossary.md), or find functions based
 * [String functions](./string/index.md)  
   Manipulate string data types
 
+* [Vector functions](./vector/index.md)  
+   Perform vector operations on `ARRAY`-type data 
+
 * [Window functions](./window/index.md)  
   Perform a calculation across a specified set of table rows
