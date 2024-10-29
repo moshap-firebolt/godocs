@@ -76,11 +76,11 @@ Accepted `<format>` patterns include:
 | `ad` or `bc`      | lower case era indicator without periods                                                          | `TO_CHAR(DATE '2023-03-03', 'ad'); --> 'ad'`                                                     |
 | `A.D.` or `B.C.`  | Upper case era indicator with periods                                                             | `TO_CHAR(DATE '2023-03-03', 'A.D.'); --> 'A.D.'`                                                 |
 | `a.d.` or `b.c.`  | Upper case era indicator with periods                                                             | `TO_CHAR(DATE '2023-03-03', 'b.c.'); --> 'a.d.'`                                                 |
-| `TZ`              | Upper case time-zone abbreviation                                                                 | `SET time_zone = 'America/Vancouver';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'TZ'); --> 'PST'`   |
-| `tz`              | Lower case time-zone abbreviation                                                                 | `SET time_zone = 'Europe/Berlin';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'tz'); --> 'cet'`       |
-| `TZH`             | Time zone hours                                                                                   | `SET TIME_ZONE = 'Israel';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'TZH'); --> '+02'`             |
-| `TZM`             | Time zone minutes                                                                                 | `SET TIME_ZONE = 'Israel';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'tzm'); --> '00'`              |
-| `OF`              | Time zone offset from UTC                                                                         | `SET TIME_ZONE = 'America/New_York';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'OF'); --> '-08:00'` |
+| `TZ`              | Upper case time-zone abbreviation                                                                 | `SET timezone = 'America/Vancouver';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'TZ'); --> 'PST'`    |
+| `tz`              | Lower case time-zone abbreviation                                                                 | `SET timezone = 'Europe/Berlin';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'tz'); --> 'cet'`        |
+| `TZH`             | Time zone hours                                                                                   | `SET TIMEZONE = 'Israel';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'TZH'); --> '+02'`              |
+| `TZM`             | Time zone minutes                                                                                 | `SET TIMEZONE = 'Israel';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'tzm'); --> '00'`               |
+| `OF`              | Time zone offset from UTC                                                                         | `SET TIMEZONE = 'America/New_York';`<br>`TO_CHAR(TIMESTAMPTZ '2023-03-03', 'OF'); --> '-08:00'`  |
 
 Additionally, modifiers can be applied to the format patterns above to alter their behavior.
 
