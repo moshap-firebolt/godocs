@@ -3,7 +3,7 @@ layout: default
 title: Engine Fundamentals
 description: Learn fundamental concepts about Firebolt Engines.
 parent: Overview
-nav_order: 2
+nav_order: 3
 ---
 
 # Firebolt Engines
@@ -72,8 +72,6 @@ ALTER ENGINE MyEngine SET NODES = 3 TYPE = L;
 ```
 
 For more information on modifying engines, see [ALTER ENGINE](../sql_reference/commands/engines/alter-engine.md).
-
-**NOTE**: Multi-cluster engines and online scaling are in preview. By default, engines are limited to a single cluster. You can dynamically modify a running engine to scale up or scale down, but currently running queries may not run to completion. If you would like to try multi-cluster engines or online scaling, reach out to Firebolt Support.
 
 
 ## Connecting to Engines
