@@ -2,8 +2,9 @@
 layout: default
 title: Data management
 description: Explore how Firebolt supports the data management lifecycle
-nav_order: 5
+nav_order: 4
 parent: Overview
+has_children: false
 ---
 # Data management
 {: .no_toc}
