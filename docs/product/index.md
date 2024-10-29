@@ -25,16 +25,16 @@ Firebolt addresses the following challenges:
 The following sections highlight Firebolt's key benefits, as well as its compatibility with various frameworks and workloads for seamless data integration and processing:
 
 * [Key benefits](#key-benefits)
-* [Frameworks and workloads](#frameworks-and-workloads)
+* [Eco-system and integrations](#eco-system-and-integrations)
 
 # Key benefits
 
 Firebolt is inherently **scalable** helping you to adapt rapidly to changes in your data and workloads. Key benefits include:
 
-* [High Efficiency](#high-efficiency) — Achieve exceptional price-to-performance ratios, delivering fast analytics without high costs.
-* [Concurrency at Scale](#concurrency-at-scale) — Run thousands of queries concurrently, maintaining sub-second performance even under heavy loads.
-* [Elasticity](#elasticity) — Seamlessly scale to handle hundreds of terabytes of data without sacrificing speed or efficiency.
-* [SQL Simplicity](#sql-simplicity) — Use a subset of PostgreSQL-compatible SQL, allowing teams to adapt easily with minimal training.
+* [High Efficiency](#-high-efficiency) — Achieve exceptional price-to-performance ratios, delivering fast analytics without high costs.
+* [Concurrency at Scale](#-concurrency-at-scale) — Run thousands of queries concurrently, maintaining sub-second performance even under heavy loads.
+* [Elasticity](#-elasticity) — Seamlessly scale to handle hundreds of terabytes of data without sacrificing speed or efficiency.
+* [SQL Simplicity](#-sql-simplicity) — Use a subset of PostgreSQL-compatible SQL, allowing teams to adapt easily with minimal training.
 
 ### <img src="../../assets/images/icon-efficiency.png" alt="Icon for efficiency." width="40"/> High efficiency
 
