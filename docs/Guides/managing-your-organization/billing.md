@@ -12,7 +12,7 @@ Firebolt bills are based on the consumption of resources within each account in 
 
 * **Data storage** usage is calculated on the daily average amount of data (in bytes) stored under your Firebolt account name for indexes and raw compressed data.
 
-* **Engine resources** usage is calculated with **one-second granularity** between the time Firebolt starts to provision the engine and when the request to terminate the engine is submitted. Warmup time for caching indexes and raw data is counted in engine usage time.
+* **Engine resources** usage is calculated with **one-second granularity** between the time Firebolt makes the engine available for queries and when the the engine moves to the stopped state.
 
 ## Set-up account billing through AWS Marketplace
 To continue using Firebolt’s engines for query execution after your initial $200 credit, you’ll need to set-up a billing account by connecting your account to the AWS Marketplace. 
