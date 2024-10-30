@@ -45,8 +45,8 @@ Improved expression comparison logic to better recognize identical expressions w
 
 
 <!-- Auto Generated Markdown for FIR-37388 - Owned by Arsenii Krasikov -->
-### Optimized cold reads by reducing Amazon S3 access
-Enhanced the performance of cold reads by minimizing the number of Amazon S3 read operations required during data access.
+### Improving cold reads by reducing the amount of Amazon S3 requests needed to load data
+Improved the performance of cold reads by minimizing the number of Amazon S3 requests required to load data. In the case of tiny tablets, this improvement lead to a 50% improvement in performance.
 
 ## Bug Fixes
 
