@@ -2,8 +2,8 @@
 layout: default
 title: Engine Sizing
 description: Choosing an engine configuration based on your data type and query patterns.
-nav_order: 1
-parent: Engine Fundamentals
+nav_order: 4
+parent: Overview
 published: false
 ---
 
@@ -18,7 +18,7 @@ We recommend that you experiment and tune different engine configurations on pre
 
 ## Understanding performance factors
 
-The engine specification (the node type) and scale (the number of nodes) are the fundamental aspects of engine performance. Another configuration parameter, the warmup method, affects engine start times. For information about warmup choices, see [Warmup method](understanding-engine-fundamentals.md#warmup-method).
+The node type of the engine and number of nodes are fundamental aspects of engine performance.
 
 For ingestion engines, tuning considerations include the source data to be ingested, the complexity of the data structures, and the response time that your application demands. For analytics engines, considerations include the complexity of aggregations and joins that you use in your queries. We explore these performance aspects and how they affect your tuning adjustments in more detail below.
 
