@@ -23,7 +23,7 @@ SPLIT( <delimiter>, <string> )
 
 | Parameter     | Description                           |
 | :------------- | :------------------------------------- |
-| `<delimiter>` | The separator to split the string by. |
+| `<delimiter>` | The character used to split the string. |
 | `<string>`    | The string to split.                  |
 
 ## Return Types
@@ -32,10 +32,13 @@ SPLIT( <delimiter>, <string> )
 ## Example
 {: .no_toc}
 
-The following example splits the nicknames of players into separate items in an array: 
+The following example splits the nicknames of players into separate items in an array:
+
 ```sql
 SELECT
 	SPLIT('|','stephen70|esimpson|ruthgill|') AS nicknames;
 ```
 
-**Returns**: `["stephen70","esimpson","ruthgill"]`
+**Returns**
+
+`["stephen70","esimpson","ruthgill"]`

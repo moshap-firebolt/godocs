@@ -11,9 +11,8 @@ parent: String functions
 
 Splits `<string>` at occurrences of `<delimiter>` and returns the `<index>`'th field, with 1 being the first index.
 If `<index>` is negative, returns the `abs(<index>)`'th-from-last field.
-If `<delimiter>` is empty, `<string>` is returned at `<index>` 1.
-If `abs(<index>)` is larger than the number of fields, returns an empty string.
-The function raises an error for `<index>` 0.
+If `<delimiter>` is empty, `<string>` character is returned at `<index>`.
+If `<index>` is 0 or `abs(<index>)` is larger than the number of fields, returns an empty string.
 
 ## Syntax
 {: .no_toc}
@@ -27,9 +26,9 @@ SPLIT_PART(<string>, <delimiter>, <index>)
 
 | Parameter     | Description                                                        | Supported input types |
 | :------------ | :----------------------------------------------------------------- | :-------------------- |
-| `<string>`    | A value expression evaluating to the string to be split.           | `TEXT`                |
-| `<delimiter>` | A value expression evaluating to the delimiter character sequence. | `TEXT`                |
-| `<index>`     | The index from which to return the substring.                      | `INTEGER`             |
+| `<string>`    | The string to be split.           | `TEXT`                |
+| `<delimiter>` | The character used to split the string. | `TEXT`                |
+| `<index>`     | The index position of the substring to return within the split parts.                      | `INTEGER`             |
 
 ## Return Type
 `TEXT`
@@ -37,30 +36,58 @@ SPLIT_PART(<string>, <delimiter>, <index>)
 ## Examples
 {: .no_toc}
 
+**Example**
+
+The following code example uses the delimiter `#` to split the string `'hello#world'`, and returns the first segment:
+
 ```sql
 SELECT
 	SPLIT_PART('hello#world','#',1) AS res;
 ```
 
-**Returns**: `'hello'`
+**Returns**
+
+`'hello'`
+
+**Example**
+
+The following code example uses the delimiter '|' to split the string `'this|is|my|test'`, and returns the second to last segment:
 
 ```sql
 SELECT
 	SPLIT_PART('this|is|my|test', '|', -2) AS res;
 ```
 
-**Returns**: `'my'`
+**Returns**
+
+`'my'`
+
+**Example**
+
+The following code example uses an empty delimiter `''` to split the string `'hello world'`, and returns the first segment:
 
 ```sql
 SELECT
 	SPLIT_PART('hello world', '', 1) AS res;
 ```
 
-**Returns**: `hello world`
+**Returns**
+
+`hello world`
+
+In the previous code example, `SPLIT_PART` sees the empty delimiter and interprets the entire string as the first and only part of the string and returns 'hello world'.
+
+**Example**
+
+The following code example uses an empty delimiter `''` to split the string `'hello world'`, and returns the first segment:
 
 ```sql
 SELECT
 	SPLIT_PART('hello world', '', 7) AS res;
 ```
 
-**Returns**: `''`
+**Returns**
+
+`''`
+
+In the previous code example, `SPLIT_PART` sees the empty delimiter and interprets the entire string as the first and only part of the string. Because there is no seventh part to return, `SPLIT_PART` returns an empty string.
