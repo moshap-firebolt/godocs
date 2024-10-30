@@ -23,7 +23,7 @@ SPLIT( <delimiter>, <string> )
 
 | Parameter     | Description                           |
 | :------------- | :------------------------------------- |
-| `<delimiter>` | The character used to split the string. |
+| `<delimiter>` | The separator to split the string by. |
 | `<string>`    | The string to split.                  |
 
 ## Return Types
@@ -32,7 +32,7 @@ SPLIT( <delimiter>, <string> )
 ## Example
 {: .no_toc}
 
-The following example splits the nicknames of players into separate items in an array:
+The following example splits the nicknames of players into separate items in an array: 
 
 ```sql
 SELECT

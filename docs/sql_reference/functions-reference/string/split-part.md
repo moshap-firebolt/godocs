@@ -51,7 +51,7 @@ SELECT
 
 **Example**
 
-The following code example uses the delimiter '|' to split the string `'this|is|my|test'`, and returns the second to last segment:
+The following code example uses the delimiter `|` to split the string `'this|is|my|test'`, and returns the second to last segment:
 
 ```sql
 SELECT
