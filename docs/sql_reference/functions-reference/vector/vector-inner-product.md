@@ -2,9 +2,7 @@
 layout: default
 title: VECTOR_INNER_PRODUCT
 description: Reference material for VECTOR_INNER_PRODUCT function
-great_grand_parent: SQL reference
-grand_parent: SQL functions
-parent: Array functions
+parent: Vector functions
 published: true
 ---
 
@@ -23,8 +21,8 @@ VECTOR_INNER_PRODUCT(<array>, <array>)
 ## Parameters
 {: .no_toc}
 
-| Parameter | Description                                           | Supported input types      |
-|:----------|:------------------------------------------------------|:---------------------------|
+| Parameter | Description                                             | Supported input types                                           |
+|:----------|:--------------------------------------------------------|:----------------------------------------------------------------|
 | `<array>` | The first array used in the inner product calculation.  | Any array of [numeric data types](../../data-types.md#numeric). |
 | `<array>` | The second array used in the inner product calculation. | Any array of [numeric data types](../../data-types.md#numeric). |
 

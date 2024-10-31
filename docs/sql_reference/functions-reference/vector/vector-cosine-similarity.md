@@ -2,9 +2,7 @@
 layout: default
 title: VECTOR_COSINE_SIMILARITY
 description: Reference material for VECTOR_COSINE_SIMILARITY function
-great_grand_parent: SQL reference
-grand_parent: SQL functions
-parent: Array functions
+parent: Vector functions
 ---
 
 ## VECTOR_COSINE_SIMILARITY
@@ -20,8 +18,8 @@ VECTOR_COSINE_SIMILARITY(<array>, <array>)
 ## Parameters
 {: .no_toc}
 
-| Parameter | Description                                              | Supported input types      |
-|:----------|:---------------------------------------------------------|:---------------------------|
+| Parameter | Description                                          | Supported input types                                           |
+|:----------|:-----------------------------------------------------|:----------------------------------------------------------------|
 | `<array>` | The first array used in the similarity calculation   | Any array of [numeric data types](../../data-types.md#numeric). |
 | `<array>` | The second array used in the similarity calculation. | Any array of [numeric data types](../../data-types.md#numeric). |
 
