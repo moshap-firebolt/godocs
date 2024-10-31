@@ -37,7 +37,7 @@ After running the query, the collected telemetry is fed back into Firebolt's his
 When you run the next query, the query optimizer accesses the telemetry that was collected in that history snapshot and extracts from it statistical information.
 Consequently, previously run queries aid the query optimizer in finding better query plans for subsequent queries and thereby improve performance.
 
-![Illustration showing how telemetry flows back from the runtime into the history, from where the query optimizer retrieves historical statistics.](history-based-optimization.png)
+<img src="../../assets/images/history-based-optimization.png" alt="Telemetry data flows back from the runtime into the query optimizer where the next run is planned." width="700"/>
 
 ### Recording query history
 

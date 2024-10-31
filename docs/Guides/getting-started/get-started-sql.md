@@ -285,7 +285,7 @@ You can check the size of your cache using the following example code:
 ```sql
 SHOW CACHE;
 ```
-The previous code example shows your cache usage in GB per total cache available. If your cache usage is too high, adjust your warmup strategy by reducing the amount of data loaded or increasing cache capacity.
+The previous code example shows your cache usage in GB per total cache available.
 
 When data is loaded into Firebolt, it is stored in units of data storage called tablets. A tablet contains a subset of a table’s rows and columns.  If you reach your cache’s 80% capacity, the entire tablet that contains the least recently used data, is evicted.
 

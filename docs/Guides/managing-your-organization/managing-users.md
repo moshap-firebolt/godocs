@@ -14,7 +14,7 @@ Users are managed at the account level and are linked to logins or service accou
 To view all users, click **Govern** to open the govern space, then choose **Users** from the menu, or query the [information_schema.users](../../sql_reference/information-schema/users.md) view. 
 
 {: .note}
-Managing users requires either the account_admin or security_admin role.
+Managing users requires the account_admin role.
 
 ## Create a new user
 
