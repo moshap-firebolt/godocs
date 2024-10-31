@@ -1,13 +1,34 @@
 ---
 layout: default
-title: Manage users
+title: Manage users and roles
 description: Learn about user permissions and how to add and remove users in a Firebolt account.
 nav_order: 8
 parent: Manage organization
 ---
 
-# Manage users
+# Manage users and roles
 {: .no_toc}
+
+In Firebolt, an **organization** can have multiple **accounts**, each serving as a separate workspace for managing resources and data. Within each account, users are created to control access, with their identities defined through logins or service accounts. **Logins** are associated with individual human users, each authenticated by unique credentials, allowing them to interact directly with Firebolt's resources according to assigned roles. **Service accounts** provide programmatic access for applications and automated processes within the account, such as data pipelines or monitoring tools. Each login and service account is linked to specific **roles**, which define their permissions, ensuring that access is managed efficiently and securely across the organization.
+
+## <img src="../../assets/images/icon-user-bangs.png" alt="Icon for a Firebolt user." width="30"/> Users
+
+ A **user** is a distinct identity that interacts with the Firebolt platform. Each user is assigned specific **roles**, which determine what actions they can perform and which resources they can access. Users are essential for controlling access in Firebolt and are managed through **role-based access control (RBAC)**. Users authenticate via **logins** or **service accounts**, depending on whether they are human users or machine-based processes.
+
+## <img src="../../assets/images/icon-login.png" alt="Icon for a Firebolt login for human access." width="30"/> Logins
+
+A **login** in Firebolt represents a **human user** and is associated with an individual’s credentials, identified by an **email address**. Logins are tied to user roles, which define what the individual can access or modify. A login is primarily used for human authentication and allows a user to access the platform, run queries, and interact with databases and other resources. For instance, a login object might be created for a specific person such as `kate@acme.com`, and this login is linked to roles that control the permissions.
+
+## <img src="../../assets/images/icon-service-account.png" alt="Icon for a Firebolt service account for programmatic access." width="30"/> Service accounts
+
+A **service account** is used to represent a **machine or application** rather than a human user. It allows automated processes to authenticate and interact with Firebolt resources. A service account is used for programmatic access, such as in pipelines, monitoring systems, application data access, and scheduled queries. Service accounts are associated with roles just like logins but are designed to operate without human intervention. For example, a service account might be used for a data pipeline that regularly ingests data into Firebolt. Each service account must be associated with a user. For more information about how to create and manage service accounts, see [Manage programmatic access to Firebolt](./service-accounts.md).
+
+
+
+
+
+
+
 
 Users are managed at the account level and are linked to logins or service accounts for programmatic use to gain access to Firebolt. Roles are granted to users to determine access to objects in Firebolt. You can add, edit or delete users using SQL or in the UI. 
 
