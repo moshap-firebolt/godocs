@@ -11,8 +11,9 @@ parent: String functions
 
 Splits `<string>` at occurrences of `<delimiter>` and returns the `<index>`'th field, with 1 being the first index.
 If `<index>` is negative, returns the `abs(<index>)`'th-from-last field.
-If `<delimiter>` is empty, `<string>` character is returned at `<index>`.
-If `<index>` is 0 or `abs(<index>)` is larger than the number of fields, returns an empty string.
+If `<delimiter>` is empty, `<string>` is returned at `<index>` 1.
+If `abs(<index>)` is larger than the number of fields, returns an empty string.
+The function raises an error for `<index>` 0.
 
 ## Syntax
 {: .no_toc}
