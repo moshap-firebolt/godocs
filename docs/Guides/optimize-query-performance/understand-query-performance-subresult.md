@@ -64,13 +64,10 @@ Firebolt transparently leverages subresult reuse. If you want to see whether sub
 
 # Disabling Subresult Reuse
 
-While testing, you might want to disable the subresult cache using the `enable_subresult_cache` [system setting](../../Reference/system-settings.md) in order to measure the performance of your query without caching:
+Firebolt exposes [system settings](../../Reference/system-settings.md) that allow turning off subresult caching at a per-query basis:
+- Setting `enable_result_cache` to `FALSE` ensures that full query results aren't retrieved from cache, while still allowing for semantic cross-query subresult reuse.
+- Setting `enable_subresult_cache` to `FALSE` disables Firebolt's entire subresult caching layer.
 
-```sql
--- Disable the subresult cache
-SET enable_subresult_cache = false;
--- This query does not use the subresult cache
-SELECT checksum(*) FROM production_table;
-```
-
-Setting `enable_subresult_cache` to `FALSE` disables the use of all cached subresults. In particular, it deactivates two caching mechanisms that normally speed up query runtimes: the use of the `MaybeCache` operator, which includes the full result cache, and the hash-table cache used by the `Join` operator.
+{: .note}
+For most benchmarking scenarios, disable the result cache.
+This approach affects only the final result caching while preserving the benefits of cross-query subresult optimizations.

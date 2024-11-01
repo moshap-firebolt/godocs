@@ -168,9 +168,36 @@ SELECT checksum(*) FROM production_table;
 SET warmup = false;
 ```
 
+## Result Cache
+
+Set `enable_result_cache` to `FALSE` to disable the use of Firebolt's result cache, which is set to `TRUE` by default. Disabling result cashing can be useful for benchmarking query performance. When `enable_result_cache` is disabled, resubmitting the same query will recompute the results rather than retrieving them from cache. 
+
+### Syntax
+
+```sql
+SET enable_result_cache = [true|false];
+```
+
+### Example
+
+The following code example disables the result cache so that no previously cached results are used, and no new cache entries are written:
+
+```sql
+-- Disable the result cache
+SET enable_result_cache = false;
+-- The following query does not use the result cache
+SELECT checksum(*) FROM production_table;
+```
+
 ## Subresult Cache
 
-Use this option to disable the subresult cache. This is useful if you want to test the performance of your queries without the caching techniques explained in our [guide on subresult resuse](../Guides/optimize-query-performance/understand-query-performance-subresult.md).
+Firebolt implements [advanced cross-query optimization](../Guides/optimize-query-performance/understand-query-performance-subresult.md) that allows SQL queries to reuse intermediate query execution states from previous requests.
+Subresult caching operates at a semantic level, which allows Firebolt to understand and optimize queries based on the meaning and context of the data rather than solely based on their syntax or structure.
+This capability allows Firebolt to optimize across different query patterns for improved efficiency.
+
+Set `enable_subresult_cache` to `FALSE` to disable Firebolt’s subresult caching, which is set to `TRUE` by default.
+
+Disabling subresult caching is generally **not recommended**, as it can negatively impact query performance, especially for complex workloads. For most benchmarking scenarios, disable the result cache instead, as described in the previous [Result Cache](./system-settings#result-cache) section. This approach affects only the final result caching while preserving the benefits of subresult optimizations.
 
 ### Syntax
 
@@ -179,12 +206,10 @@ SET enable_subresult_cache = [true|false];
 ```
 
 ### Example 
-The following code example disables the subresult cache so no previously cached result is used and no new cache entries are written by this query:
+The following code example disables the subresult cache so no previously cached subresult is used and no new cache entries are written by this query:
 ```sql
 -- Disable the subresult cache
 SET enable_subresult_cache = false;
 -- This query does not use the subresult cache
-SELECT checksum(*) FROM production_table;
+SELECT count(*) FROM fact_table INNER JOIN dim_table ON (a = b);
 ```
-
-Setting `enable_subresult_cache` to `FALSE` disables the use of all [cached subresults](../Guides/optimize-query-performance/understand-query-performance-subresult.md). In particular, it deactivates two caching mechanisms that normally speed up query runtimes: the use of the `MaybeCache` operator, which includes the full result cache, and the hash-table cache used by the `Join` operator.
