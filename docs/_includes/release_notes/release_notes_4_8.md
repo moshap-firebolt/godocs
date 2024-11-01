@@ -50,18 +50,6 @@ Improved the performance of cold reads by minimizing the number of Amazon S3 req
 
 ## Bug Fixes
 
-<!-- Auto Generated Markdown for FIR-36835 - Owned by Michael Freitag -->
-### System improvements and stability enhancements
-The following improvements increased the performance and stability of the Firebolt platform:
-
-* Addressed an issue that could cause queries to hang under certain conditions, improving the overall stability of the database.
-* Resolved an issue that caused database backup operations to fail intermittently, ensuring successful and error-free backups.
-* Simplified the logging process for clearer, more informative logs, aiding in troubleshooting.
-* Improved query runtimes by optimizing query planning, delivering faster query performance.
-* Removed deprecated functions to maintain system integrity.
-* Update encryption protocols for enhanced security, offering better data protection against unauthorized access.
-
-
 <!-- Auto Generated Markdown for FIR-37268 - Owned by Zhen Li -->
 ### Fixed a bug preventing view creation with type conversions to array types
 Fixed an issue that prevented users from creating database views that involve type conversion to array types.
