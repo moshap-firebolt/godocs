@@ -8,7 +8,8 @@ has_toc: false
 has_children: true
 ---
 
-# Register and set up your organization
+# <img src="../../assets/images/icon-firebolt.png" alt="The next step in the wizard is to specify a data source." width="40"/> Register and set up your organization
+
  Learn how to register your organization, create accounts, and create logins and/or service accounts. 
 
  * [Register your organization](creating-an-organization.md)
