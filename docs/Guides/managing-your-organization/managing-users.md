@@ -17,11 +17,11 @@ In Firebolt, an **organization** can have multiple **accounts**, each serving as
 
 ## <img src="../../assets/images/icon-login.png" alt="Icon for a Firebolt login for human access." width="30"/> Logins
 
-A **login** in Firebolt represents a **human user** and is associated with an individual’s credentials, identified by an **email address**. Logins are tied to user roles, which define what the individual can access or modify. A login is primarily used for human authentication and allows a user to access the platform, run queries, and interact with databases and other resources. For instance, a login object might be created for a specific person such as `kate@acme.com`, and this login is linked to roles that control the permissions.
+A **login** in Firebolt represents a **human user** and is associated with an individual’s credentials, identified by an **email address**. Logins are tied to user roles, which define what the individual can access or modify. A login is primarily used for human authentication and allows a user to access the platform, run queries, and interact with databases and other resources. For instance, a login object might be created for a specific person such as `kate@acme.com`, and this login is linked to roles that control permissions.
 
 ## <img src="../../assets/images/icon-service-account.png" alt="Icon for a Firebolt service account for programmatic access." width="30"/> Service accounts
 
-A **service account** is used to represent a **machine or application** rather than a human user. It allows automated processes to authenticate and interact with Firebolt resources. A service account is used for programmatic access, such as in pipelines, monitoring systems, application data access, and scheduled queries. Service accounts are associated with roles just like logins but are designed to operate without human intervention. For example, a service account might be used for a data pipeline that regularly ingests data into Firebolt. Each service account must be associated with a user. For more information about how to create and manage service accounts, see [Manage programmatic access to Firebolt](./service-accounts.md).
+A **service account** represents a **machine or application** rather than a human user. It allows automated processes to authenticate and interact with Firebolt resources. A service account is used for programmatic access, such as in pipelines, monitoring systems, application data access, and scheduled queries. Service accounts are associated with roles just like logins but are designed to operate without human intervention. For example, a service account might be used for a data pipeline that regularly ingests data into Firebolt. Each service account must be associated with a user. For more information about how to create and manage service accounts, see [Manage programmatic access to Firebolt](./service-accounts.md).
 
  A user must be associated with **either** a login or a service account, as follows:
 
@@ -30,7 +30,7 @@ A **service account** is used to represent a **machine or application** rather t
 
 There can be multiple users per login or service account. Users are managed at the account level, as shown in the following diagram:
 
-<img src="../../assets/images/multiple-users-per-login-or-sa.png" alt="There can be multiple users per login, for human access, or service account, for programmatic access" width="500">
+<img src="../../assets/images/multiple-users-per-login-or-sa.png" alt="There can be multiple users per login, for human access, or per service account, for programmatic access" width="500">
 
 You can [add](#set-up-a-new-user), [edit](#edit-an-existing-user) or [delete](#deleting-an-existing-user) users using SQL in the **Develop Space** or using the user interface (UI) in the **Configure Space**.
 
@@ -39,9 +39,9 @@ Managing roles requires the account_admin role. For more information about roles
 
 ## Set up a new user
 
-To set up a new user, you must do the following:
+To set up a new user, complete the following steps:
 
-1.  Create a new login or service account. The following section has information about creating a new login, for human access to Firebolt. If you want to set up a new user for programmatic access, see [Create a service account](./service-accounts.md#create-a-service-account).
+1.  Create a new login or service account. The following section provides information about creating a new login, for human access to Firebolt. If you want to set up a new user for programmatic access, see [Create a service account](./service-accounts.md#create-a-service-account).
 2. Create a new user.
 3. Link the user with a login or a service account.
 4. Create a role.
@@ -60,7 +60,7 @@ To set up a user for programmatic access, [create a service account](./service-a
 #### Create a login
 <img src="../../assets/images/workflow-new-user-create-login.png" alt="To set up a user for human access, first create a login." width="700">
 
-A login is an **email** that is used for authentication. A login can be used with multiple accounts. When you set up a new user, you must create either a login or service account for them. Create a login if you want to associate a user with human access to Firebolt. [Create a service account](./service-accounts.md#create-a-service-account) for programmatic access. You will link the user to **either** a login or a service account.
+A login is an **email** that is used for authentication. A login can be associated with multiple accounts. When you set up a new user, you must create either a login or service account for them. Create a login if you want to associate a user with human access to Firebolt. [Create a service account](./service-accounts.md#create-a-service-account) for programmatic access. You will link the user to **either** a login or a service account.
 
 ##### Create a login using the UI
 
@@ -75,12 +75,12 @@ Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’
     2. Last Name - The last name of the user.
     3. Login Name - The email address of the user.
 
-5. Select a network policy from the down arrow. You can choose **Default** or create your own. The default network policy accepts traffic from any IP address. For more about network policies, including how to create a new policy, see [Manage network policies](../security/network-policies.md).
-6. Toggle the following on or off to select the following:
+5. Select a network policy from the drop-down list. You can choose **Default** or create your own. The default network policy accepts traffic from any IP address. For more about network policies, including how to create a new policy, see [Manage network policies](../security/network-policies.md).
+6. Toggle the following options on or off to select the following:
 
-    1. Is password enabled - Toggle on to require authentication using a password.
-    2. Is MFA enabled - Toggle on to require authentication using multi-factor authentication (MFA).
-    3. Is organization admin - Toggle on to  grant that Login permissions associated with an **Organization Admin**. A user must have organization administrative privileges to manage logins and service accounts. For more information about organization administrative privileges and other roles, see the [Roles](./index.md#roles) section in [Manage organization](./index.md).
+    1. Is password enabled - Toggle **on** to require authentication using a password.
+    2. Is MFA enabled - Toggle **on** to require authentication using multi-factor authentication (MFA).
+    3. Is organization admin - Toggle **on** to grant that login permissions associated with an **Organization Admin**. A user must have organization administrative privileges to manage logins and service accounts. For more information about organization administrative privileges and other roles, see the [Roles](./index.md#roles) section in [Manage organization](./index.md).
 
 7. Select **Create**.
 
@@ -94,7 +94,7 @@ Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’
 
     * The database that **Script 1** will use is located directly below the tab name. If you want to change the database, select another database from the drop-down list.
 
-    * An engine must be running to process the script in a selected tab. The name and status of the engine that **Script 1** uses for computation is located to the right of the current selected database. If the engine has auto-start set to TRUE, it will start from the stopped state. For more information about auto-start, see [Immediately Starting or Automatically Stopping an Engine](../operate-engines/working-with-engines-using-ddl.md#immediately-starting-or-automatically-stopping-an-engine). 
+    * An engine must be running to process the script in a selected tab. The name and status of the engine that **Script 1** uses for computation is located to the right of the current selected database. If the engine has auto-start set to `TRUE`, it will start from a stopped state. For more information about auto-start, see [Immediately Starting or Automatically Stopping an Engine](../operate-engines/working-with-engines-using-ddl.md#immediately-starting-or-automatically-stopping-an-engine). 
 
 3. Select **system** from the drop-down arrow next to the engine name. The system engine is always running, and you can use it to create a login. You can also use an engine that you create.
 4. Use the syntax in the following example code to create a login in the SQL Script Editor:
@@ -136,7 +136,7 @@ Use the syntax in the following example code and the [CREATE USER](../../sql_ref
 CREATE USER <my_user>;
 ```
 
-You can also create a user and link it to a login at the same time as shown in the following code example:
+You can also create a user and link it to a login simultaneously as shown in the following code example:
 ```sql
 CREATE USER <my_user> WITH LOGIN = <my_login>;
 ```
@@ -159,7 +159,7 @@ If the user wasn’t associated with a login or service account when they were c
 2. Select **Users** from the left sub-menu bar.
 3. Select the three horizontal dots (…) to the right of the user that you need to link to a login.
 4. Select **Edit user details**.
-5. If you want to link the user to a login for human access, select Login from the down arrow next to **Assign to**. If you want to link the user to a service account for programmatic access, select a name from the down arrow next to **Service account name**.
+5. If you want to link the user to a login for human access, select Login from the drop-down list next to **Assign to**. If you want to link the user to a service account for programmatic access, select a name from the drop-down list next to **Service account name**.
 6. If you want to link the user to a login for human access, select the name of the login to associate with the user from the drop-down list under **Login name**.  If you want to link the user to a service account for programmatic access, selectThis drop-down list contains only login accounts that are not already assigned to a user in the current account.
 7. Select **Save**.
 
@@ -301,14 +301,14 @@ ALTER USER alex SET LOGIN="alexs@acme.com";
 
 ## Deleting an existing user
 
-You can delete a user using either the UI or with SQL. The delete operation is not reversible.
+You can delete a user using either the UI or with SQL. The delete operation is irreversible.
 
 ### Delete a user using the UI
 
 1. Select **Users** from the left sub-menu bar.
 2. Select the three horizontal dots (…) to the right of the user that you need to delete.
 3. Select **Delete user**.
-4. Select **Confirm** to delete the user. This operation is not reversible.
+4. Select **Confirm** to delete the user. This operation is irreversible.
 
 
 ### Delete a user using SQL
