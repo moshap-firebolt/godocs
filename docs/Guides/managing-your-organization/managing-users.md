@@ -11,10 +11,6 @@ parent: Manage organization
 
 In Firebolt, an **organization** can have multiple **accounts**, each serving as a separate workspace for managing resources and data. Within each account, users are created to control access, with their identities defined through logins or service accounts. **Logins** are associated with individual human users, each authenticated by unique credentials, allowing them to interact directly with Firebolt's resources according to assigned roles. **Service accounts** provide programmatic access for applications and automated processes within the account, such as data pipelines or monitoring tools. Each login and service account is linked to specific **roles**, which define their permissions, ensuring that access is managed efficiently and securely across the organization.
 
-## <img src="../../assets/images/icon-user-bangs.png" alt="Icon for a Firebolt user." width="30"/> Users
-
- A **user** is a distinct identity that interacts with the Firebolt platform. Each user is assigned specific **roles**, which determine what actions they can perform and which resources they can access. Users are essential for controlling access in Firebolt and are managed through **role-based access control (RBAC)**. Users authenticate via **logins** or **service accounts**, depending on whether they are human users or machine-based processes.
-
 ## <img src="../../assets/images/icon-login.png" alt="Icon for a Firebolt login for human access." width="30"/> Logins
 
 A **login** in Firebolt represents a **human user** and is associated with an individual’s credentials, identified by an **email address**. Logins are tied to user roles, which define what the individual can access or modify. A login is primarily used for human authentication and allows a user to access the platform, run queries, and interact with databases and other resources. For instance, a login object might be created for a specific person such as `kate@acme.com`, and this login is linked to roles that control permissions.
@@ -22,6 +18,10 @@ A **login** in Firebolt represents a **human user** and is associated with an in
 ## <img src="../../assets/images/icon-service-account.png" alt="Icon for a Firebolt service account for programmatic access." width="30"/> Service accounts
 
 A **service account** represents a **machine or application** rather than a human user. It allows automated processes to authenticate and interact with Firebolt resources. A service account is used for programmatic access, such as in pipelines, monitoring systems, application data access, and scheduled queries. Service accounts are associated with roles just like logins but are designed to operate without human intervention. For example, a service account might be used for a data pipeline that regularly ingests data into Firebolt. Each service account must be associated with a user. For more information about how to create and manage service accounts, see [Manage programmatic access to Firebolt](./service-accounts.md).
+
+## <img src="../../assets/images/icon-user-bangs.png" alt="Icon for a Firebolt user." width="30"/> Users
+
+ A **user** is a distinct identity that interacts with the Firebolt platform. Each user is assigned specific **roles**, which determine what actions they can perform and which resources they can access. Users are essential for controlling access in Firebolt and are managed through **role-based access control (RBAC)**. Users authenticate via **logins** or **service accounts**, depending on whether they are human users or machine-based processes.
 
  A user must be associated with **either** a login or a service account, as follows:
 
@@ -36,6 +36,19 @@ You can [add](#set-up-a-new-user), [edit](#edit-an-existing-user) or [delete](#d
 
 {: .note}
 Managing roles requires the account_admin role. For more information about roles, see the [Roles](../managing-your-organization/index.md#roles) section in [Manage organization](../managing-your-organization/index.md), and the [Account](../security/rbac.md#account) section of [Manage role-based access control](../security/rbac.md) that specifies permissions for **CREATE USER**.
+
+**Topics**
+* [Set up a new user](#set-up-a-new-user)
+    * [Set up a new user for programmatic access](#set-up-a-new-user-for-programmatic-access)
+    * [Set up a new user for human access](#set-up-a-new-user-for-human-access)
+        * [Create a login](#create-a-login)
+        * [Create a user](#create-a-user)
+        * [Link the user to a login or service account](#link-the-user-to-the-login-or-service-account)
+        * [Create a role](#create-a-role)
+        * [Assign a role to a user](#assign-a-role-to-a-user)
+* [Edit an existing user](#edit-an-existing-user)
+* [Delete an existing user](#deleting-an-existing-user)
+
 
 ## Set up a new user
 
@@ -169,6 +182,12 @@ Use the syntax in the following example code and the [ALTER_USER](../../sql_refe
 
 ```sql
 ALTER USER <my_user> SET LOGIN = <login_name>;
+```
+
+The following code links a user to a service account:
+
+```sql
+ALTER USER <user_name> SET SERVICE_ACCOUNT = <service_account_name>
 ```
 
 #### Create a role
