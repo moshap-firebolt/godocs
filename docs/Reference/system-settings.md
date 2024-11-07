@@ -139,7 +139,7 @@ SET query_label = '';
 -- Find your query in information_schema.engine_running_queries and information_schema.engine_query_history
 -- e.g., to retrieve the QUERY_ID
 SELECT query_id, * FROM information_schema.engine_running_queries WHERE query_label = 'Hello Firebolt'
-SELECT query_id, * FROM information_schema.engine_running_queries WHERE query_label = 'Hello Firebolt'
+SELECT query_id, * FROM information_schema.engine_query_history WHERE query_label = 'Hello Firebolt'
 
 CANCEL QUERY WHERE query_id = '<retrieved query_id>'
 ```
