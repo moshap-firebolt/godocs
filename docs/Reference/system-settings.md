@@ -14,14 +14,14 @@ You can use a SET statement in a SQL script to configure aspects of Firebolt's s
 
 ## Setting the time zone
 
-Use this setting to specify the session time zone. Time zone names are from the [tz database](http://www.iana.org/time-zones) (see the [list of tz database time zones](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)). For times in the future, the latest known rule for the given time zone is applied. Firebolt does not support time zone abbreviations, as they cannot account for daylight savings time transitions, and some time zone abbreviations have meant different UTC offsets at different times. The default value of the `time_zone` setting is UTC. 
+Use this setting to specify the session time zone. Time zone names are from the [tz database](http://www.iana.org/time-zones) (see the [list of tz database time zones](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)). For times in the future, the latest known rule for the given time zone is applied. Firebolt does not support time zone abbreviations, as they cannot account for daylight savings time transitions, and some time zone abbreviations have meant different UTC offsets at different times. The default value of the `timezone` setting is UTC. 
 
 ### Syntax
 
 {: .no_toc}
 
 ```sql
-SET time_zone = '<time_zone>'
+SET timezone = '<time_zone>'
 ```
 
 ### Example
@@ -29,11 +29,11 @@ SET time_zone = '<time_zone>'
 {: .no_toc}
 
 ```sql
-SET time_zone = 'UTC';
+SET timezone = 'UTC';
 SELECT TIMESTAMPTZ '1996-09-03 11:19:33.123456 Europe/Berlin';  --> 1996-09-03 09:19:33.123456+00
 SELECT TIMESTAMPTZ '2023-1-29 6:3:42.7-3:30';  --> 2023-01-29 09:33:42.7+00
 
-SET time_zone = 'Israel';
+SET timezone = 'Israel';
 SELECT TIMESTAMPTZ '2023-1-29 12:21:49';  --> 2023-01-29 12:21:49+02
 SELECT TIMESTAMPTZ '2023-1-29Z';  --> 2023-01-29 02:00:00+02
 ```
@@ -139,7 +139,7 @@ SET query_label = '';
 -- Find your query in information_schema.engine_running_queries and information_schema.engine_query_history
 -- e.g., to retrieve the QUERY_ID
 SELECT query_id, * FROM information_schema.engine_running_queries WHERE query_label = 'Hello Firebolt'
-SELECT query_id, * FROM information_schema.engine_running_queries WHERE query_label = 'Hello Firebolt'
+SELECT query_id, * FROM information_schema.engine_query_history WHERE query_label = 'Hello Firebolt'
 
 CANCEL QUERY WHERE query_id = '<retrieved query_id>'
 ```
@@ -213,3 +213,5 @@ SET enable_subresult_cache = false;
 -- This query does not use the subresult cache
 SELECT count(*) FROM fact_table INNER JOIN dim_table ON (a = b);
 ```
+
+Setting `enable_subresult_cache` to `FALSE` disables the use of all [cached subresults](../Guides/optimize-query-performance/understand-query-performance-subresult.md). In particular, it deactivates two caching mechanisms that normally speed up query runtimes: the use of the `MaybeCache` operator, which includes the full result cache, and the hash-table cache used by the `Join` operator.
