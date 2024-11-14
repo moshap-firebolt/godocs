@@ -17,6 +17,8 @@ We provide an archive of release notes for your historical reference.
 * Topic ToC
 {:toc}
 
+{% include release_notes/release_notes_4_8.md %}
+
 {% include release_notes/release_notes_4_7.md %}
 
 {% include release_notes/release_notes_4_6.md %}
@@ -226,7 +228,7 @@ cast(a as array(int)).
 <!--- FIR-32252 --->**Postgres-compliant Cast**
 {: style="color:red;"}
 
-Casts now behave the same across the product and adhere to the list of supported casts. Some usages of casts (explicit, implicit, or assignment cast) that were previously allowed are no longer supported and now result in errors. For more details on list of supported casts, see the documentation [here](https://docs.firebolt.io/sql_reference/data-types.html#type-conversion).
+Casts now behave the same across the product and adhere to the list of supported casts. Some usages of casts (explicit, implicit, or assignment cast) that were previously allowed are no longer supported and now result in errors. For more details on list of supported casts, see the documentation [here](../../sql_reference/data-types.md#type-conversion).
 
 ### Enhancements, changes and new integrations
 {: style="color:black;"}
