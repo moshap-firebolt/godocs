@@ -35,7 +35,7 @@ There can be multiple users per login or service account. Users are managed at t
 You can [add](#set-up-a-new-user), [edit](#edit-an-existing-user) or [delete](#deleting-an-existing-user) users using SQL in the **Develop Space** or using the user interface (UI) in the **Configure Space**.
 
 {: .note}
-Managing roles requires the account_admin role. For more information about roles, see the [Roles](../managing-your-organization/index.md#roles) section in [Manage organization](../managing-your-organization/index.md), and the [Account](../security/rbac.md#account) section of [Manage role-based access control](../security/rbac.md) that specifies permissions for **CREATE USER**.
+Managing roles requires the account_admin role. For more information about roles, see the [Roles](../../Overview/organizations-accounts.md#roles) section in [Organizations and accounts](../../Overview/organizations-accounts.md), and the [Account](../security/rbac.md#account) section of [Manage role-based access control](../security/rbac.md) that specifies permissions for **CREATE USER**.
 
 **Topics**
 * [Set up a new user](#set-up-a-new-user)
@@ -66,7 +66,7 @@ The following sections guide you through the previous steps.
 
 <img src="../../assets/images/workflow-new-user-sa.png" alt="To set up a new user for programmatic access, first set up a service account." width="700" >
 
-To set up a user for programmatic access, [create a service account](./service-accounts.md#create-a-service-account), and then complete the steps in the following sections to [create a new user](#create-a-new-user), [link the user](#link-the-user-to-the-login-or-service-account) to a service account, [create a role](#create-a-role), and [assign the role](#assign-a-role-to-a-user) to the user.
+To set up a user for programmatic access, [create a service account](./service-accounts.md#create-a-service-account), and then complete the steps in the following sections to [create a user](#create-a-user), [link the user](#link-the-user-to-the-login-or-service-account) to a service account, [create a role](#create-a-role), and [assign the role](#assign-a-role-to-a-user) to the user.
 
 ### Set up a new user for human access
 
@@ -93,7 +93,7 @@ Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’
 
     1. Is password enabled - Toggle **on** to require authentication using a password.
     2. Is MFA enabled - Toggle **on** to require authentication using multi-factor authentication (MFA).
-    3. Is organization admin - Toggle **on** to grant that login permissions associated with an **Organization Admin**. A user must have organization administrative privileges to manage logins and service accounts. For more information about organization administrative privileges and other roles, see the [Roles](./index.md#roles) section in [Manage organization](./index.md).
+    3. Is organization admin - Toggle **on** to grant that login permissions associated with an **Organization Admin**. A user must have organization administrative privileges to manage logins and service accounts. For more information about organization administrative privileges and other roles, see the [Roles](../../Overview/organizations-accounts.md#roles) section in [Manage organization](./index.md).
 
 7. Select **Create**.
 
@@ -137,7 +137,7 @@ After you create a login, the next step is to create a user.
 
 5. Toggle the radio button next to **Associate a login**.
 6. Select the name of the login to associate with the user from the drop-down list under **Login Associated**. This drop-down list contains only logins that are not already assigned to a user in the current account.
-7. (Optional) Choose the role you want to assign to the user. If no role is specified, the user is automatically granted a public role. For more information about roles, see the [Roles](./index.md#roles) section in [Manage organization](./index.md).
+7. (Optional) Choose the role you want to assign to the user. If no role is specified, the user is automatically granted a public role. For more information about roles, see the [Roles](../../Overview/organizations-accounts.md#roles) section in [Manage organization](./index.md).
 8. Select **Save**.
 
 
@@ -193,7 +193,7 @@ ALTER USER <user_name> SET SERVICE_ACCOUNT = <service_account_name>
 #### Create a role
 <img src="../../assets/images/workflow-new-user-create-role.png" alt="To set up a new user, after you link the user, create a role." width="700">
 
-If you don’t already have a role that you want to assign to a user, you can create a role to define what actions users can perform.
+If you don’t already have a role that you want to assign to a user, you can create a role to define what actions users can perform. For more information, see [Roles](../../Overview/organizations-accounts.md#roles).
 
 ##### Create a role using the UI
 
