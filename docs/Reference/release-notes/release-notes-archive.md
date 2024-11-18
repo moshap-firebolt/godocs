@@ -17,6 +17,8 @@ We provide an archive of release notes for your historical reference.
 * Topic ToC
 {:toc}
 
+{% include release_notes/release_notes_4_8.md %}
+
 {% include release_notes/release_notes_4_7.md %}
 
 {% include release_notes/release_notes_4_6.md %}

@@ -17,8 +17,8 @@ A table-valued function (TVF) that accepts a URL to an Amazon bucket containing 
 READ_CSV ( 
     url => <file_url>
     [, compression => <file_compression>]
-    [, aws_key_id => <aws_key_id>]
-    [, aws_secret_key => <aws_secret_key>]
+    [, access_key_id => <access_key_id>]
+    [, secret_access_key => <secret_access_key>]
     [, header => <csv_has_header_row>]
     [, delimiter => <field_delimiter>]
     [, quote => { "'" | '"' | SINGLE_QUOTE | DOUBLE_QUOTE}]
@@ -35,8 +35,8 @@ READ_CSV (
 |:------------------------------|:-------------------------------------------------------------------------------------------------|:----------------------|
 | `<url>`                       | The location of the Amazon S3 bucket containing your files. The expected format is `s3://{bucket_name}/{full_file_path}`.          | `TEXT`                |
 | `<compression>`               | The [compression type](../../commands/data-definition/create-external-table.md#compression) of the input file. If `compression` is not set, `compression` is inferred from the file extension.           | `TEXT`                |
-| `<aws_key_id>`                | The AWS key ID.                                                                                      | `TEXT`                |
-| `<aws_secret_key>`            | The AWS secret key.                                                                                  | `TEXT`                |
+| `<access_key_id>`                | The AWS key ID.                                                                                      | `TEXT`                |
+| `<secret_access_key>`            | The AWS secret key.                                                                                  | `TEXT`                |
 | `<header>`                    | Set to `TRUE` if the first row of the CSV file contains a header row containing the column names.                                 | `TEXT`                |
 | `<delimiter>`                 | Specify the character used to separate fields. The default delimiter is a comma (`,`).                                                            | `TEXT`                |
 | `<quote>`                     | Specify the character used for quoting fields. The default is double quote (`"`). If a single quote is specified, the quote character will be set to (`'`). Accepts only `DOUBLE_QUOTE`, `SINGLE_QUOTE`, `'`, or `"`.     | `TEXT`                |
@@ -58,7 +58,7 @@ The following apply:
 
 * Parameters must be named using the following syntax: `=>`.
 
-* If you provide either `aws_key_id` or `aws_secret_key`, you must provide both.
+* If you provide either `access_key_id` or `secret_access_key`, you must provide both.
 
 ## Return Type
 
