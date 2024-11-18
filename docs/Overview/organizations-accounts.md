@@ -35,21 +35,21 @@ An organization is a fundamental object in Firebolt, providing a logical structu
 
 In the Firebolt object model, an organization has the following levels:
 
-* **Login** - an email associated with a user that is used for identification. A single login can be associated with users across multiple accounts, but can only be associated with one user per account. For more information about logins, see [Manage logins](../Guides/managing-your-organization/managing-logins.md).
-* **Service account** - Use a service account to access Firebolt programmatically through an API. For more information about how to set up and manage a service account, see [Manage programmatic access](../Guides/managing-your-organization/service-accounts.md).
-* **Network policy** - Set a network security configuration that controls and restricts network access to specific resources within Firebolt based on IP addresses or IP ranges. See [Manage network policies](../Guides/security/network-policies).
-* **Account** - A group of resources which can include a database, an engine and several users with associated logins or service accounts and roles. See the following [Accounts](#accounts) section for high-level information about accounts and [Manage accounts](../Guides/managing-your-organization/managing-accounts.md) for more detailed information. Under account are the following levels:
-    * **User** - An individual with specific permissions and roles that allow access to and interaction with the database and engine within an account. A user must be associated with a login (or service account), and with an account. See the following [Users](#users) section for more high-level information and [Manage users and roles](../Guides/managing-your-organization/managing-users.md) for more detailed information.
+* **Login** - an email associated with a user that is used for identification. A single login can be associated with users across multiple accounts, but can only be associated with one user per account. For more information about logins, see [Manage logins]({% link Guides/managing-your-organization/managing-logins.md %}).
+* **Service account** - Use a service account to access Firebolt programmatically through an API. For more information about how to set up and manage a service account, see [Manage programmatic access]({% link Guides/managing-your-organization/service-accounts.md %}).
+* **Network policy** - Set a network security configuration that controls and restricts network access to specific resources within Firebolt based on IP addresses or IP ranges. See [Manage network policies]({% link Guides/security/network-policies.md %}).
+* **Account** - A group of resources which can include a database, an engine and several users with associated logins or service accounts and roles. See the following [Accounts](#accounts) section for high-level information about accounts and [Manage accounts]({% link Guides/managing-your-organization/managing-accounts.md %}) for more detailed information. Under account are the following levels:
+    * **User** - An individual with specific permissions and roles that allow access to and interaction with the database and engine within an account. A user must be associated with a login (or service account), and with an account. See the following [Users](#users) section for more high-level information and [Manage users and roles]({% link Guides/managing-your-organization/managing-users.md %}) for more detailed information.
     * **Role** - A set of permissions that defines a user’s access and capabilities, which can be assigned to one or more users to manage their privileges. See the following Roles section for more high-level information and Manage users and roles for more detailed information.
-    * **Database** - A logical collection of schemas and data objects, such as tables and views, that organizes and manages user data and metadata for querying and data processing. For more information about databases see [Create a Database](../Guides/getting-started/get-started-sql.md#create-a-database) in the [Get started using SQL](../Guides/getting-started/get-started-sql.md) guide. Under database are the following levels:
-        * **Schema** - A collection of system views containing metadata about objects in the current database, including tables, columns, indexes, and other database components. For more information, see [Information Schema Views](../sql_reference/information-schema/index.md). Under schema are the following levels:
-            * **External table** - Tables that store metadata objects that reference files stored in an Amazon S3 bucket, rather than actual data. For more information, see [Work with external tables](../Guides/loading-data/working-with-external-tables.md).
-            * **Managed table** - A Firebolt-managed internal structured data object within a database that stores rows and columns of data. Firebolt’s managed tables have built-in optimizations for fast query processing times. For more information, see [Working with tables](./working-with-tables/working-with-tables.md).
-            * **View** - A virtual table that represents the result of a stored query, including both user-defined views and [information schema views](../sql_reference/information-schema/index.md), which provide metadata about database objects like tables, columns, and indexes.
-            * **Index** - A database structure that optimizes data retrieval by organizing specific columns, improving query performance and enabling efficient filtering, sorting, and joining of datasets. For more information, see [Using Firebolt indexes](./using-indexes.md).
-    * **Engine** - A compute resource that processes queries and manages data operations and can be scaled independently and turned on or off as needed. For more information, see [Firebolt Engines](./engine-fundamentals.md).
+    * **Database** - A logical collection of schemas and data objects, such as tables and views, that organizes and manages user data and metadata for querying and data processing. For more information about databases see [Create a Database]({% link Guides/getting-started/get-started-sql.md %}#create-a-database) in the [Get started using SQL]({% link Guides/getting-started/get-started-sql.md %}) guide. Under database are the following levels:
+        * **Schema** - A collection of system views containing metadata about objects in the current database, including tables, columns, indexes, and other database components. For more information, see [Information Schema Views]({% link sql_reference/information-schema/index.md %}). Under schema are the following levels:
+            * **External table** - Tables that store metadata objects that reference files stored in an Amazon S3 bucket, rather than actual data. For more information, see [Work with external tables]({% link Guides/loading-data/working-with-external-tables.md %}).
+            * **Managed table** - A Firebolt-managed internal structured data object within a database that stores rows and columns of data. Firebolt’s managed tables have built-in optimizations for fast query processing times. For more information, see [Working with tables]({% link Overview/working-with-tables/working-with-tables.md %}).
+            * **View** - A virtual table that represents the result of a stored query, including both user-defined views and [information schema views]({% link sql_reference/information-schema/index.md %}), which provide metadata about database objects like tables, columns, and indexes.
+            * **Index** - A database structure that optimizes data retrieval by organizing specific columns, improving query performance and enabling efficient filtering, sorting, and joining of datasets. For more information, see [Using Firebolt indexes]({% link Overview/using-indexes.md %}).
+    * **Engine** - A compute resource that processes queries and manages data operations and can be scaled independently and turned on or off as needed. For more information, see [Firebolt Engines]({% link Overview/engine-fundamentals.md %}).
 
-When you [register for the first time](../Guides/managing-your-organization/creating-an-organization.md), Firebolt sets up an organization for you. During registration, you’ll set up your first account, with one user. The first user that is added is the account administrator, as shown in the following diagram:
+When you [register for the first time]({% link Guides/managing-your-organization/creating-an-organization.md %}), Firebolt sets up an organization for you. During registration, you’ll set up your first account, with one user. The first user that is added is the account administrator, as shown in the following diagram:
 
  <img src="../../assets/images/manage-organization-first-registration.png" alt="When you first register, Firebolt sets up an organization with one account and user that has account administrator privileges." width="400" style="display: block; margin: 0 auto;">
 
@@ -109,7 +109,7 @@ In Firebolt, each user is associated with either a **login**, which is an email 
 
 <img src="../../assets/images/user_login_service-account.png" alt="A user must be associated with either a login or a service account." width="400">
 
-The role grants the user permission to access resources inside the account that they are associated with. A user can have several roles associated with them at the same time. Firebolt has built-in roles with defined permissions. You can also define a [custom role](../Guides/security/rbac.md#custom-roles) that grants permissions specific to your use case.
+The role grants the user permission to access resources inside the account that they are associated with. A user can have several roles associated with them at the same time. Firebolt has built-in roles with defined permissions. You can also define a [custom role]({% link Guides/security/rbac.md %}#custom-roles) that grants permissions specific to your use case.
 
 #### Firebolt built-in roles
 
@@ -182,8 +182,8 @@ An organizational administrative role has the **highest** access privileges of a
 <img src="../../assets/images/manage-organization-org-admin-role.png" alt="An org admin has privileges over the entire organization and all of its children." width="700">
  
 - **Global authentication method:** Firebolt handles user authentication and access control at the organization level. A login (represented by an email) is created for each user accessing Firebolt.
-- **Programmatic access:** [Service accounts](../Guides/managing-your-organization/service-accounts.md) enable programmatic access to Firebolt.
-- **Network policy enforcement:** [Network policies](../Guides/security/network-policies.md) provide fine-grain control of IP ranges that are allowed or blocked from accessing an organization.
+- **Programmatic access:** [Service accounts]({% link Guides/managing-your-organization/service-accounts.md %}) enable programmatic access to Firebolt.
+- **Network policy enforcement:** [Network policies]({% link Guides/security/network-policies.md %}) provide fine-grain control of IP ranges that are allowed or blocked from accessing an organization.
 
 ## Additional resources
 
@@ -193,7 +193,7 @@ Firebolt provides billing at the organization level, but gives you billing obser
 - **Organization-level governance:** Monitor and analyze the overall billing for all accounts to gain insights into the organization's cost distribution and resource utilization at the organization level. 
 - **Account-level observability:** Delve into detailed billing information specific to each account, allowing you to track individual accounts' usage, costs, storage, and compute consumption patterns.
 
-Firebolt bills are based on the consumption of resources within each account in your organization. This includes the total amount of data stored and engine usage. Learn how to [manage billing](../Guides/managing-your-organization/billing.md). 
+Firebolt bills are based on the consumption of resources within each account in your organization. This includes the total amount of data stored and engine usage. Learn how to [manage billing]({% link Guides/managing-your-organization/billing.md %}). 
 
 ### Security
 
@@ -201,4 +201,4 @@ Learn about authentication methods, role-based access control, network policies,
 
 ### Available regions
 
-View the [AWS regions](../Reference/available-regions.md) where you can use Firebolt.
+View the [AWS regions]({% link Reference/available-regions.md %}) where you can use Firebolt.

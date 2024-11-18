@@ -17,7 +17,7 @@ A **login** in Firebolt represents a **human user** and is associated with an in
 
 ## <img src="../../assets/images/icon-service-account.png" alt="Icon for a Firebolt service account for programmatic access." width="30"/> Service accounts
 
-A **service account** represents a **machine or application** rather than a human user. It allows automated processes to authenticate and interact with Firebolt resources. A service account is used for programmatic access, such as in pipelines, monitoring systems, application data access, and scheduled queries. Service accounts are associated with roles just like logins but are designed to operate without human intervention. For example, a service account might be used for a data pipeline that regularly ingests data into Firebolt. Each service account must be associated with a user. For more information about how to create and manage service accounts, see [Manage programmatic access to Firebolt](./service-accounts.md).
+A **service account** represents a **machine or application** rather than a human user. It allows automated processes to authenticate and interact with Firebolt resources. A service account is used for programmatic access, such as in pipelines, monitoring systems, application data access, and scheduled queries. Service accounts are associated with roles just like logins but are designed to operate without human intervention. For example, a service account might be used for a data pipeline that regularly ingests data into Firebolt. Each service account must be associated with a user. For more information about how to create and manage service accounts, see [Manage programmatic access to Firebolt]({% link Guides/managing-your-organization/service-accounts.md %}).
 
 ## <img src="../../assets/images/icon-user-bangs.png" alt="Icon for a Firebolt user." width="30"/> Users
 
@@ -35,7 +35,7 @@ There can be multiple users per login or service account. Users are managed at t
 You can [add](#set-up-a-new-user), [edit](#edit-an-existing-user) or [delete](#deleting-an-existing-user) users using SQL in the **Develop Space** or using the user interface (UI) in the **Configure Space**.
 
 {: .note}
-Managing roles requires the account_admin role. For more information about roles, see the [Roles](../../Overview/organizations-accounts.md#roles) section in [Organizations and accounts](../../Overview/organizations-accounts.md), and the [Account](../security/rbac.md#account) section of [Manage role-based access control](../security/rbac.md) that specifies permissions for **CREATE USER**.
+Managing roles requires the account_admin role. For more information about roles, see the [Roles]({% link Overview/organizations-accounts.md %}#roles) section in [Organizations and accounts]({% link Overview/organizations-accounts.md %}), and the [Account]({% link Guides/security/rbac.md %}#account) section of [Manage role-based access control]({% link Guides/security/rbac.md %}) that specifies permissions for **CREATE USER**.
 
 **Topics**
 * [Set up a new user](#set-up-a-new-user)
@@ -54,7 +54,7 @@ Managing roles requires the account_admin role. For more information about roles
 
 To set up a new user, complete the following steps:
 
-1.  Create a new login or service account. The following section provides information about creating a new login, for human access to Firebolt. If you want to set up a new user for programmatic access, see [Create a service account](./service-accounts.md#create-a-service-account).
+1.  Create a new login or service account. The following section provides information about creating a new login, for human access to Firebolt. If you want to set up a new user for programmatic access, see [Create a service account]({% link Guides/managing-your-organization/service-accounts.md %}#create-a-service-account).
 2. Create a new user.
 3. Link the user with a login or a service account.
 4. Create a role.
@@ -66,18 +66,18 @@ The following sections guide you through the previous steps.
 
 <img src="../../assets/images/workflow-new-user-sa.png" alt="To set up a new user for programmatic access, first set up a service account." width="700" >
 
-To set up a user for programmatic access, [create a service account](./service-accounts.md#create-a-service-account), and then complete the steps in the following sections to [create a user](#create-a-user), [link the user](#link-the-user-to-the-login-or-service-account) to a service account, [create a role](#create-a-role), and [assign the role](#assign-a-role-to-a-user) to the user.
+To set up a user for programmatic access, [create a service account]({% link Guides/managing-your-organization/service-accounts.md %}#create-a-service-account), and then complete the steps in the following sections to [create a user](#create-a-user), [link the user](#link-the-user-to-the-login-or-service-account) to a service account, [create a role](#create-a-role), and [assign the role](#assign-a-role-to-a-user) to the user.
 
 ### Set up a new user for human access
 
 #### Create a login
 <img src="../../assets/images/workflow-new-user-create-login.png" alt="To set up a user for human access, first create a login." width="700">
 
-A login is an **email** that is used for authentication. A login can be associated with multiple accounts. When you set up a new user, you must create either a login or service account for them. Create a login if you want to associate a user with human access to Firebolt. [Create a service account](./service-accounts.md#create-a-service-account) for programmatic access. You will link the user to **either** a login or a service account.
+A login is an **email** that is used for authentication. A login can be associated with multiple accounts. When you set up a new user, you must create either a login or service account for them. Create a login if you want to associate a user with human access to Firebolt. [Create a service account]({% link Guides/managing-your-organization/service-accounts.md %}#create-a-service-account) for programmatic access. You will link the user to **either** a login or a service account.
 
 ##### Create a login using the UI
 
-Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’t yet registered with Firebolt, see the [Get Started](../getting-started/index.md) guide. If you encounter any issues, reach out to [support@firebolt.io](mailto:support@firebolt.io) for help. Then, do the following:
+Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’t yet registered with Firebolt, see the [Get Started]({% link Guides/getting-started/index.md %}) guide. If you encounter any issues, reach out to [support@firebolt.io](mailto:support@firebolt.io) for help. Then, do the following:
 
 1. Select the Configure icon (<img src="../../assets/images/configure-icon.png" alt="The Firebolt Configure Space icon." width="12"/>) in the left navigation pane to open the **Configure Space**.
 2. Select **Logins**.
@@ -88,18 +88,18 @@ Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’
     2. Last Name - The last name of the user.
     3. Login Name - The email address of the user.
 
-5. Select a network policy from the drop-down list. You can choose **Default** or create your own. The default network policy accepts traffic from any IP address. For more about network policies, including how to create a new policy, see [Manage network policies](../security/network-policies.md).
+5. Select a network policy from the drop-down list. You can choose **Default** or create your own. The default network policy accepts traffic from any IP address. For more about network policies, including how to create a new policy, see [Manage network policies]({% link Guides/security/network-policies.md %}).
 6. Toggle the following options on or off to select the following:
 
     1. Is password enabled - Toggle **on** to require authentication using a password.
     2. Is MFA enabled - Toggle **on** to require authentication using multi-factor authentication (MFA).
-    3. Is organization admin - Toggle **on** to grant that login permissions associated with an **Organization Admin**. A user must have organization administrative privileges to manage logins and service accounts. For more information about organization administrative privileges and other roles, see the [Roles](../../Overview/organizations-accounts.md#roles) section in [Manage organization](./index.md).
+    3. Is organization admin - Toggle **on** to grant that login permissions associated with an **Organization Admin**. A user must have organization administrative privileges to manage logins and service accounts. For more information about organization administrative privileges and other roles, see the [Roles]({% link Overview/organizations-accounts.md %}#roles) section in [Organizations and accounts]({% link Overview/organizations-accounts.md %}).
 
 7. Select **Create**.
 
 ##### Create a login using SQL
 
-Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’t yet registered with Firebolt, see the [Get Started](../getting-started/index.md) guide. If you encounter any issues, reach out to [support@firebolt.io](mailto:support@firebolt.io) for help. Then, do the following:
+Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’t yet registered with Firebolt, see the [Get Started]({% link Guides/getting-started/index.md %}) guide. If you encounter any issues, reach out to [support@firebolt.io](mailto:support@firebolt.io) for help. Then, do the following:
 
 1. Select the **Develop** icon (<img src="../../assets/images/develop-icon.png" alt="The Firebolt Develop Space icon" width="12"/>).
 
@@ -107,7 +107,7 @@ Login to [Firebolt’s Workspace](https://go.firebolt.io/login). If you haven’
 
     * The database that **Script 1** will use is located directly below the tab name. If you want to change the database, select another database from the drop-down list.
 
-    * An engine must be running to process the script in a selected tab. The name and status of the engine that **Script 1** uses for computation is located to the right of the current selected database. If the engine has auto-start set to `TRUE`, it will start from a stopped state. For more information about auto-start, see [Immediately Starting or Automatically Stopping an Engine](../operate-engines/working-with-engines-using-ddl.md#immediately-starting-or-automatically-stopping-an-engine). 
+    * An engine must be running to process the script in a selected tab. The name and status of the engine that **Script 1** uses for computation is located to the right of the current selected database. If the engine has auto-start set to `TRUE`, it will start from a stopped state. For more information about auto-start, see [Immediately Starting or Automatically Stopping an Engine]({% link Guides/operate-engines/working-with-engines-using-ddl.md %}#immediately-starting-or-automatically-stopping-an-engine). 
 
 3. Select **system** from the drop-down arrow next to the engine name. The system engine is always running, and you can use it to create a login. You can also use an engine that you create.
 4. Use the syntax in the following example code to create a login in the SQL Script Editor:
@@ -137,13 +137,13 @@ After you create a login, the next step is to create a user.
 
 5. Toggle the radio button next to **Associate a login**.
 6. Select the name of the login to associate with the user from the drop-down list under **Login Associated**. This drop-down list contains only logins that are not already assigned to a user in the current account.
-7. (Optional) Choose the role you want to assign to the user. If no role is specified, the user is automatically granted a public role. For more information about roles, see the [Roles](../../Overview/organizations-accounts.md#roles) section in [Manage organization](./index.md).
+7. (Optional) Choose the role you want to assign to the user. If no role is specified, the user is automatically granted a public role. For more information about roles, see the [Roles]({% link Overview/organizations-accounts.md %}#roles) section in [Organization and accounts]({% link Overview/organizations-accounts.md %}).
 8. Select **Save**.
 
 
 ##### Create a user using SQL
 
-Use the syntax in the following example code and the [CREATE USER](../../sql_reference/commands/access-control/create-user.md) statement to create a user in the **SQL Script Editor** in the **Develop Space**:
+Use the syntax in the following example code and the [CREATE USER]({% link sql_reference/commands/access-control/create-user.md %}) statement to create a user in the **SQL Script Editor** in the **Develop Space**:
 
 ```sql
 CREATE USER <my_user>;
@@ -172,13 +172,13 @@ If the user wasn’t associated with a login or service account when they were c
 2. Select **Users** from the left sub-menu bar.
 3. Select the three horizontal dots (…) to the right of the user that you need to link to a login.
 4. Select **Edit user details**.
-5. If you want to link the user to a login for human access, select Login from the drop-down list next to **Assign to**. If you want to link the user to a service account for programmatic access, select a name from the drop-down list next to **Service account name**.
-6. If you want to link the user to a login for human access, select the name of the login to associate with the user from the drop-down list under **Login name**.  If you want to link the user to a service account for programmatic access, selectThis drop-down list contains only login accounts that are not already assigned to a user in the current account.
+5. If you want to link the user to a login for human access, select **Login** from the drop-down list next to **Assign to**. If you want to link the user to a service account for programmatic access, select **Service Account** from the drop-down list next to **Assign to**.
+6. If you want to link the user to a login for human access, select the name of the login to associate with the user from the drop-down list under **Login name**.  If you want to link the user to a service account for programmatic access, select a name from the drop-down list next to **Service account name**. This drop-down list contains only login accounts that are not already assigned to a user in the current account.
 7. Select **Save**.
 
 ##### Link a user using SQL
 
-Use the syntax in the following example code and the [ALTER_USER](../../sql_reference/commands/access-control/alter-user.md) statement to link a user to a login in the **SQL Script Editor** in the **Develop Space**:
+Use the syntax in the following example code and the [ALTER_USER]({% link sql_reference/commands/access-control/alter-user.md %}) statement to link a user to a login in the **SQL Script Editor** in the **Develop Space**:
 
 ```sql
 ALTER USER <my_user> SET LOGIN = <login_name>;
@@ -193,7 +193,7 @@ ALTER USER <user_name> SET SERVICE_ACCOUNT = <service_account_name>
 #### Create a role
 <img src="../../assets/images/workflow-new-user-create-role.png" alt="To set up a new user, after you link the user, create a role." width="700">
 
-If you don’t already have a role that you want to assign to a user, you can create a role to define what actions users can perform. For more information, see [Roles](../../Overview/organizations-accounts.md#roles).
+If you don’t already have a role that you want to assign to a user, you can create a role to define what actions users can perform. For more information, see [Roles]({% link Overview/organizations-accounts.md %}#roles).
 
 ##### Create a role using the UI
 
@@ -222,7 +222,7 @@ If you don’t already have a role that you want to assign to a user, you can cr
 
 ##### Create a role using SQL
 
-Use the syntax in the following example code and the [CREATE ROLE](../../sql_reference/commands/access-control/create-role.md) and [GRANT](../../sql_reference/commands/access-control/grant.md) statements to create a role in the **SQL Script Editor** in the **Develop Space**:
+Use the syntax in the following example code and the [CREATE ROLE]({% link sql_reference/commands/access-control/create-role.md %}) and [GRANT]({% link sql_reference/commands/access-control/grant.md %}) statements to create a role in the **SQL Script Editor** in the **Develop Space**:
 
 ```sql
 CREATE ROLE <my_role>;
@@ -258,7 +258,7 @@ Use the following code example to grant a role permission to **read data from a 
 GRANT SELECT ON TABLE <table_name> TO <role_name>
 ```
 
-For more information about role-based access, see [Manage role-based access control](../security/rbac.md).
+For more information about role-based access, see [Manage role-based access control]({% link Guides/security/rbac.md %}).
 
 #### Assign a role to a user
 <img src="../../assets/images/workflow-new-user-assign.png" alt="To set up a new user, after creating a role, assign it to a user." width="700">
@@ -277,7 +277,7 @@ You can assign a new role to the user or change the role assigned to the user fr
 
 ##### Assign a role using SQL
 
-Use the syntax in the following example code and the [GRANT](../../sql_reference/commands/access-control/grant.md) statement to assign a role in the **SQL Script Editor** in the **Develop Space**:
+Use the syntax in the following example code and the [GRANT]({% link sql_reference/commands/access-control/grant.md %}) statement to assign a role in the **SQL Script Editor** in the **Develop Space**:
 
 ```sql
 GRANT <my_role> TO USER <my_user>;
@@ -304,7 +304,7 @@ You can alter a user's name, login or service account that they are associated w
 
 ### Edit a user using SQL 
 
-Use the [ALTER USER](../../sql_reference/commands/access-control/alter-user.md) statement to change a user's information in the **SQL Script Editor** in the **Develop Space**. 
+Use the [ALTER USER]({% link sql_reference/commands/access-control/alter-user.md %}) statement to change a user's information in the **SQL Script Editor** in the **Develop Space**. 
 
 The following code example changes a user's name:
 
@@ -332,7 +332,7 @@ You can delete a user using either the UI or with SQL. The delete operation is i
 
 ### Delete a user using SQL
 
-Use the syntax in the following example code and the the [DROP USER](../../sql_reference/commands/access-control/drop-user.md) statement to delete an existing user in the **SQL Script Editor** in the **Develop Space**:
+Use the syntax in the following example code and the the [DROP USER]({% link sql_reference/commands/access-control/drop-user.md %}) statement to delete an existing user in the **SQL Script Editor** in the **Develop Space**:
 
 ```sql
 DROP USER "alex";
