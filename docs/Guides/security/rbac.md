@@ -117,7 +117,7 @@ Permissions can be granted on schemas to allow usage and modification of schemas
 | INSERT ANY         | Enables insert on all existing and future tables in the schema.              |
 | UPDATE ANY         | Enables update on all existing and future tables in the schema.              |
 | TRUNCATE ANY       | Enables truncate on all existing and futureall tables in the schema.         |
-| VACCUM ANY         | Enables [VACUUM](../../sql_reference/commands/data-management/vacuum.md) on all existing and future tables in the schema. |
+| VACUUM ANY         | Enables [VACUUM](../../sql_reference/commands/data-management/vacuum.md) on all existing and future tables in the schema. |
 | MODIFY ANY         | Enables modify and drop on all existing and future objects in the schema.    |
 | SELECT ANY         | Enables select on all existing and future objects in the schema.             |
 
