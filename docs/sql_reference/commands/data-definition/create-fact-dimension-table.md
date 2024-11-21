@@ -67,9 +67,6 @@ Firebolt supports the column constraints shown below.
 | `NULL` \| `NOT NULL` | Determines if the column may or may not contain NULLs.                                                                                                                                                                     | `NOT NULL`    |
 
 {: .note}
-Note that nullable columns can not be used in Firebolt indexes (Primary, or Aggregating indexes).
-
-{: .note}
 Note that column default expressions are temporarily disabled starting from version 4.3.0.
 We are working on a new implementation of this feature and it will be re-enabled in the near future.
 
